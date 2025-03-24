@@ -61,7 +61,7 @@ public class VitKatEnfermeraDomicilioBackApplication {
 			/*CREATE USERS */
             UserEntity userSantiago = UserEntity.builder()
                     .username("santiago")
-                    .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
+                    .password("$2a$10$GhJjURkjx6TgHGYGIvg1w.EMSRKDsYqhDcUlhfoF3AR6WQ.5ygC0m")
                     .isEnabled(true)
                     .accountNoExpired(true)
                     .accountNoLocked(true)
@@ -71,7 +71,7 @@ public class VitKatEnfermeraDomicilioBackApplication {
 
             UserEntity userDaniel = UserEntity.builder()
                     .username("daniel")
-                    .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
+                    .password("$2a$10$GhJjURkjx6TgHGYGIvg1w.EMSRKDsYqhDcUlhfoF3AR6WQ.5ygC0m")
                     .isEnabled(true)
                     .accountNoExpired(true)
                     .accountNoLocked(true)
@@ -81,7 +81,7 @@ public class VitKatEnfermeraDomicilioBackApplication {
 
             UserEntity userAndrea = UserEntity.builder()
                     .username("andrea")
-                    .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
+                    .password("$2a$10$GhJjURkjx6TgHGYGIvg1w.EMSRKDsYqhDcUlhfoF3AR6WQ.5ygC0m")
                     .isEnabled(true)
                     .accountNoExpired(true)
                     .accountNoLocked(true)
@@ -91,7 +91,16 @@ public class VitKatEnfermeraDomicilioBackApplication {
 
             UserEntity userAnyi = UserEntity.builder()
                     .username("anyi")
-                    .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
+                    .password("$2a$10$GhJjURkjx6TgHGYGIvg1w.EMSRKDsYqhDcUlhfoF3AR6WQ.5ygC0m")
+                    .isEnabled(true)
+                    .accountNoExpired(true)
+                    .accountNoLocked(true)
+                    .credentialNoExpired(true)
+                    .roles(Set.of(roleDeveloper))
+                    .build();
+            UserEntity userXavi = UserEntity.builder()
+                    .username("xavi")
+                    .password("1234")
                     .isEnabled(true)
                     .accountNoExpired(true)
                     .accountNoLocked(true)
@@ -99,7 +108,8 @@ public class VitKatEnfermeraDomicilioBackApplication {
                     .roles(Set.of(roleDeveloper))
                     .build();
 
-            userRepository.saveAll(List.of(userSantiago, userDaniel, userAndrea, userAnyi));
+
+            userRepository.saveAll(List.of(userSantiago, userDaniel, userAndrea, userAnyi, userXavi));
 		};
 	}
 

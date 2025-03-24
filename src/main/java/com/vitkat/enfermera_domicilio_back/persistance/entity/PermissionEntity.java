@@ -10,14 +10,16 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name="permission")
-@Builder
-@Getter
 @Setter
+@Getter
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "permission")
 public class PermissionEntity {
 	
 	@Id

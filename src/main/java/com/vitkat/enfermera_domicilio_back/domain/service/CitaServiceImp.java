@@ -32,7 +32,8 @@ public class CitaServiceImp implements CitaService{
 	public Optional<CitaPojo> findById(Integer id) {
 		
 		return citaRepository.findById(id)
-                .map(citaMapper::toCitaPojo); 
+                .map(citaMapper::toCitaPojo);
+               
 	}
 
 	@Override

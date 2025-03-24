@@ -33,8 +33,12 @@ public class UserDetailServiceImp implements UserDetailsService {
 		userEntity.getRoles().stream().flatMap(role -> role.getRoles().stream())
 				.forEach(permission -> authorityList.add(new SimpleGrantedAuthority(permission.getName())));
 
-		return new User(userEntity.getUsername(), userEntity.getPassword(), userEntity.isEnabled(),
-				userEntity.isAccountNoExpired(), userEntity.isCredentialNoExpired(), userEntity.isAccountNoLocked(),
+		return new User(userEntity.getUsername(), 
+				userEntity.getPassword(), 
+				userEntity.isEnabled(),
+				userEntity.isAccountNoExpired(), 
+				userEntity.isCredentialNoExpired(), 
+				userEntity.isAccountNoLocked(),
 				authorityList);
 	}
 

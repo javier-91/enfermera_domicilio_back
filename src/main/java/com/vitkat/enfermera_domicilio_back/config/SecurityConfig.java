@@ -32,17 +32,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
+        		.cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
                     // Configurar los endpoints publicos
-                    http.requestMatchers(HttpMethod.GET, "/auth/get").permitAll();
-
-                    // Cofnigurar los endpoints privados
-                    http.requestMatchers(HttpMethod.POST, "/auth/post").hasAnyRole("ADMIN", "DEVELOPER");
-                    http.requestMatchers(HttpMethod.PATCH, "/auth/patch").hasAnyAuthority("REFACTOR");
-
+                    http.requestMatchers(HttpMethod.POST, "/citas").permitAll();
+                	http.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+                    // Configurar los endpoints privados
+                    //http.requestMatchers(HttpMethod.POST, "/citas").hasAnyRole("ADMIN", "DEVELOPER");
+                    http.requestMatchers(HttpMethod.GET, "/citas").hasRole("ADMIN");
                     // Configurar el resto de endpoint - NO ESPECIFICADOS
                     http.anyRequest().denyAll();
                 })
@@ -75,4 +75,8 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+//    public static void main (String [] args) {
+//    	System.out.println(new BCryptPasswordEncoder().encode("1234"));
+//    	
+//    }
 }

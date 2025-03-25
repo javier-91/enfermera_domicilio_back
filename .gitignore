@@ -1,3 +1,6 @@
+# Ignorar email.properties
+/src/main/resources/email.properties
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar

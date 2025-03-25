@@ -45,7 +45,7 @@ public class SecurityConfig {
                     //http.requestMatchers(HttpMethod.POST, "/citas").hasAnyRole("ADMIN", "DEVELOPER");
                     http.requestMatchers(HttpMethod.GET, "/citas").hasRole("ADMIN");
                     // Configurar el resto de endpoint - NO ESPECIFICADOS
-                    http.anyRequest().denyAll();
+                    //http.anyRequest().denyAll();
                 })
                 .build();
     }

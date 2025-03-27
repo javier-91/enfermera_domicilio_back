@@ -51,7 +51,6 @@ public class CitaController {
 	@PostMapping()
 	public ResponseEntity<CitaPojo> save(@RequestBody CitaPojo cita) {
 		
-		System.out.println(cita.getData());
 		citaService.save(cita);
 		Fecha fecha = new Fecha(cita.getData());
 		emailService.sendEmail(

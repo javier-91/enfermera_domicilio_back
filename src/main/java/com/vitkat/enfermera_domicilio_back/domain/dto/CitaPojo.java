@@ -1,9 +1,10 @@
 package com.vitkat.enfermera_domicilio_back.domain.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
+
 
 @Getter
 @Setter
@@ -16,5 +17,13 @@ public class CitaPojo {
 	private Date data;
 	private String hora;
 
-	
+	public String toString() {
+		return "Cita: \n Nombre = " + nom + "\n" + 
+				"Correo = " + correu + "\n" + 
+				"Telefono = " + telefon + "\n" + 
+				"Fecha = " + data + "\n"+ 
+				"Hora = " + hora + "\n" + 
+				"Mensaje = " + missatge ;
+	}
+
 }

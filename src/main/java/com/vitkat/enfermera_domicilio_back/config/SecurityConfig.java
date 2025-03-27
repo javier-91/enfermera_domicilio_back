@@ -40,12 +40,12 @@ public class SecurityConfig {
                     // Configurar los endpoints publicos
                     http.requestMatchers(HttpMethod.POST, "/citas").permitAll();
                 	http.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
-                	http.requestMatchers(HttpMethod.POST, "/email/sendMessage").permitAll();
+                	http.requestMatchers(HttpMethod.POST, "/email/*").permitAll();
                     // Configurar los endpoints privados
                     //http.requestMatchers(HttpMethod.POST, "/citas").hasAnyRole("ADMIN", "DEVELOPER");
                     http.requestMatchers(HttpMethod.GET, "/citas").hasRole("ADMIN");
                     // Configurar el resto de endpoint - NO ESPECIFICADOS
-                    //http.anyRequest().denyAll();
+                    http.anyRequest().denyAll();
                 })
                 .build();
     }

@@ -1,6 +1,6 @@
 package com.vitkat.enfermera_domicilio_back.persistance.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,12 +11,14 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.ToString;
 
 /**
  * Clase para crear objetos de citas del cliente.
  */
 @Entity
 @Table(name ="citas")
+@ToString
 public class Cita {
 	
 	@Id

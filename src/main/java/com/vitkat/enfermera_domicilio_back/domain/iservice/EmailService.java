@@ -1,6 +1,7 @@
 package com.vitkat.enfermera_domicilio_back.domain.iservice;
 
 import java.io.File;
+import java.util.concurrent.CompletableFuture;
 
 public interface EmailService {
 	/**
@@ -9,14 +10,6 @@ public interface EmailService {
 	 * @param subject Asunto
 	 * @param message Mensaje
 	 */
-    void sendEmail(String[] toUser, String subject, String message);
-    /**
-     * Método para enviar correo con archivo
-     * @param toUser Correo a quien se le va mandar
-     * @param subject Asunto
-     * @param message Mensaje
-     * @param file Archivo
-     */
-    void sendEmailWithFile(String[] toUser, String subject, String message, File file);
-
+	CompletableFuture<Void> sendEmail(String toUser, String subject, String message);
+   
 }

@@ -40,7 +40,7 @@ public class SecurityConfig {
                     // Configurar los endpoints publicos
                     http.requestMatchers(HttpMethod.POST, "/citas").permitAll();
                 	http.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
-                	http.requestMatchers(HttpMethod.POST, "/contacto/*").permitAll();
+                	http.requestMatchers(HttpMethod.POST, "/contacto").permitAll();
                     // Configurar los endpoints privados
                     //http.requestMatchers(HttpMethod.POST, "/citas").hasAnyRole("ADMIN", "DEVELOPER");
                     http.requestMatchers(HttpMethod.GET, "/citas").hasRole("ADMIN");

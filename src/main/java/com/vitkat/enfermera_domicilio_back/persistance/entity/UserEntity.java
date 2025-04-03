@@ -35,6 +35,9 @@ public class UserEntity {
 	@Column(unique = true)
 	private String username;
 	private String password;
+	private String nom;
+	private String correu;
+	private String telefon;
 	
 	@Column(name = "is_enabled")
 	private boolean isEnabled;

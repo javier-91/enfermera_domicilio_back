@@ -19,7 +19,7 @@ public class Fecha {
 	
 	public int getDiaMes() {
 		return this.fecha.getDayOfMonth();
-	}
+	} 
 	
 	public String getDiaSemana() {
 		return fecha.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("es", "ES"));//TextStyle.FULL obtiene el nombre completo del mes.

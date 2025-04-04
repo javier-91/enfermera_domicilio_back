@@ -1,5 +1,7 @@
 # Ignorar email.properties
 /src/main/resources/email.properties
+#Ignorar claves
+/src/main/resources/certs
 
 HELP.md
 target/

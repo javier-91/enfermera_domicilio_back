@@ -35,5 +35,20 @@ public interface CitaService {
 	 * @param id
 	 */
 	void deleteById(Integer id);
+	
+	/**
+	 * Primero busca la cita por su id y finalmente actualiza los cambios.
+	 * @param cita
+	 * @param id
+	 * @return Devuelve el objecto actualizado "CitaPojo" si no, no devuelve nada.
+	 */
+	Optional<CitaPojo> updateCita(CitaPojo cita, Integer id);
+	
+	/**
+	 * Busca el objeto Cita por su id, si lo encuentra retorna true, si no retorna false.
+	 * @param id Integer
+	 * @return boolean
+	 */
+	boolean existsById(Integer id);
 
 }

@@ -1,6 +1,5 @@
 package com.vitkat.enfermera_domicilio_back.domain.iservice;
 
-import java.io.File;
 import java.util.concurrent.CompletableFuture;
 
 public interface EmailService {

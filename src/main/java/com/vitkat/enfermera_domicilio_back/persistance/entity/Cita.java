@@ -9,8 +9,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 /**
@@ -19,6 +22,8 @@ import lombok.ToString;
 @Entity
 @Table(name ="citas")
 @ToString
+@Getter
+@Setter
 public class Cita {
 	
 	@Id
@@ -36,12 +41,19 @@ public class Cita {
 	private Date data;
 	@NotBlank(message = "La hora no puede ser nulo ni vacía.")
 	private String hora;
+	@NotBlank(message = "Tienes que seleccionar una enfermera.")
+	private String enfermera;
+	@NotBlank(message = "La dirección no puede estar vacía.")
+	private String direccio;
+	@NotNull
+	private Integer minutosServicio;
+	
 	
 	public Cita() {
 		
 	}
 
-	public Cita(Integer id, String nom, String correu, String telefon, String missatge, Date data, String hora) {
+	public Cita(Integer id, String nom, String correu, String telefon, String missatge, Date data, String hora, String enfermera, String direccio, Integer minutosServicio) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -50,63 +62,10 @@ public class Cita {
 		this.missatge = missatge;
 		this.data = data;
 		this.hora = hora;
+		this.enfermera = enfermera;
+		this.direccio = direccio;
+		this.minutosServicio = minutosServicio;
+		
 	}
 
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getCorreu() {
-		return correu;
-	}
-
-	public void setCorreu(String correu) {
-		this.correu = correu;
-	}
-
-	public String getTelefon() {
-		return telefon;
-	}
-
-	public void setTelefon(String telefon) {
-		this.telefon = telefon;
-	}
-
-	public String getMissatge() {
-		return missatge;
-	}
-
-	public void setMissatge(String missatge) {
-		this.missatge = missatge;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public String getHora() {
-		return hora;
-	}
-
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
-	
 }

@@ -68,6 +68,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-client</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.5.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -100,8 +105,8 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
+
 	</dependencies>
 
 	<build>
@@ -112,8 +117,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.13.0</version>
 				<configuration>
-					<source>${java.version}</source> <!-- Ajusta según tu versión de Java -->
-					<target>${java.version}</target> <!-- Ajusta según tu versión de Java -->
+					<source>${java.version}</source> <!-- Ajusta según tu versión
+					de Java -->
+					<target>${java.version}</target> <!-- Ajusta según tu versión
+					de Java -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>

@@ -10,6 +10,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,10 +36,17 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 	@Column(unique = true)
+	@Size(max = 30)
 	private String username;
+	@NotBlank
 	private String password;
+	@NotBlank
 	private String nom;
+	@Email
+	@NotBlank
+	@Size(max = 80)
 	private String correu;
+	@NotBlank
 	private String telefon;
 	
 	@Column(name = "is_enabled")
@@ -48,7 +58,7 @@ public class UserEntity {
 	@Column(name = "credential_No_Expired")
 	private boolean credentialNoExpired;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, targetEntity = RoleEntity.class, cascade = CascadeType.PERSIST)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<RoleEntity> roles = new HashSet<>();
 }

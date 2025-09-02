@@ -34,7 +34,9 @@ public class MailConfiguration {
         props.put("mail.smtp.auth", "true");//Habilitamos la autenticación
         props.put("mail.smtp.starttls.enable", "true");//Habilitamos el cifrado entre la aplicación y el correo mediante SMTP
         props.put("mail.debug", "true");//Imprimirá la información en la consola, es como un log.
-
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        props.put("mail.smtp.starttls.required", "true");
+        
         return mailSender;
 	}
 

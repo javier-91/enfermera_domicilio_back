@@ -19,7 +19,7 @@ import com.vitkat.enfermera_domicilio_back.domain.iservice.EmailService;
  */
 @RestController
 @RequestMapping("/contacto")
-@CrossOrigin("*") // Permite que el frontend acceda al backend sin problemas de CORS
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true") // Permite que el frontend acceda al backend, sin problemas de CORS con credenciales
 public class ContactoController {
 	
 	private final EmailService emailService;
@@ -38,7 +38,6 @@ public class ContactoController {
 
 		emailService.sendEmail(emailAdmin, "Contacto", contacto.toString());
 		
-		String response = "Todo a ido correcto";
 		
 		return ResponseEntity.status(HttpStatus.OK).body(contacto);
 	}

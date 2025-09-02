@@ -46,13 +46,13 @@ public class EmailServiceImp implements EmailService {
 			mailMessage.addInline("logo", logo);
 
 			mailSender.send(mimeMessage);
-			log.info("Correo enviado con éxito a: {}", toUser);
+			//log.info("Correo enviado con éxito a: {}", toUser);
 			return CompletableFuture.completedFuture(null);
 		} catch (IOException e) {
-			log.error("Error leyendo el archivo logo.png: {}", e.getMessage(), e);
+			//log.error("Error leyendo el archivo logo.png: {}", e.getMessage(), e);
 			throw new RuntimeException("No se pudo cargar el logo.", e);
 		} catch (MessagingException e) {
-			log.error("Error enviando correo a {}: {}", toUser, e.getMessage(), e);
+			//log.error("Error enviando correo a {}: {}", toUser, e.getMessage(), e);
 			return CompletableFuture.completedFuture(null);
 		}
 	}

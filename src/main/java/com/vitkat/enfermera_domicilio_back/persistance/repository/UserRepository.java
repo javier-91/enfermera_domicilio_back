@@ -11,6 +11,8 @@ import com.vitkat.enfermera_domicilio_back.persistance.entity.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, Long>{
 	
 	Optional<UserEntity> findUserEntityByUsername(String name);
+	//Optional<UserEntity> findByUsername(String username);
+	
 	//TAMBIÉN S EPUEDE HACER ASI
 	/*@Query("Select usuari from UserEntity usuari WHERE usuari.username = ?")
 	Optional<UserEntity> findUser(String username);*/

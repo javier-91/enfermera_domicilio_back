@@ -58,11 +58,7 @@ public class CitaServiceImp implements CitaService{
 		System.out.println("ID"+id);
 		return citaRepository.findById(id)
 				.map(citaVieja -> {
-					System.out.println("ANTES: " + citaVieja);
-					System.out.println("ANTES: " + citaPojo);
 					citaMapper.updateCitaFromPojo(citaPojo, citaVieja);//Guarda los cambios a la citaPojo existente
-					System.out.println("DESPUÉS: " + citaVieja);
-					System.out.println("DESPUÉS: " + citaPojo);
 					//Cita cita=citaMapper.toCita(citaPojo);
 	                Cita citaAct=citaRepository.save(citaVieja);
 	                return citaMapper.toCitaPojo(citaAct);						
